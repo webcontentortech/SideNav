@@ -2,14 +2,12 @@
     width:1250px;
     height:650px;
     border:7px solid #000;
-
 }
 
 .secondDiv{
     width:1250px;
     height:30px;
     border:2px solid #000;
-
 }
 
 .thirdDiv{
@@ -62,11 +60,3 @@
 p{
     display: none;
 }
-
-
-
-
-
-
-
-
