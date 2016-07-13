@@ -1,0 +1,27 @@
+$(document).ready(function(){
+	$("#clothing").hide();
+	$("#autoMobiles").hide();
+	$("#electronic").hide();
+	$("#sam").hide();
+	$("#apple").hide();
+	$("#nokia").hide();
+	$("#mob").hide();
+	$("#para").hide();
+
+	$("#hamburger").click(function(){
+		$("#electronic").hide();
+	});
+	$("#1").click(function(){
+		$("#electronic").show();
+		$("#mob").show();
+	});
+	$("#mob").click(function(){
+		$("#sam").show();
+		$("#apple").show();
+		$("#nokia").show();
+	});
+	$("#sam").click(function(){
+		$("#para").show();
+		console.log(para);
+	});
+});

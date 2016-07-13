@@ -1,38 +1,142 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="site.css">
-	<script type="text/javascript" src="jQuery"></script>
-	<script type="text/javascript" src="site.js"></script>
+    <link rel="stylesheet" type="text/css" href="site.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="site.js"></script>
 </head>
 <body>
-	<div class="firstDiv">
-		<div class="secondDiv">
-			<span class="firstSpan">
-				<button type="button" id="electronics" style="height:30px;width:150px;">ELECTRONICS</button>
-			</span>
-			<span class="secondSpan">
-				<button type="button" id="auto" style="height:30px;width:150px;">AUTOMOBILES</button>
-			</span>
-			<span class="thirdSpan">
-				<button type="button" id="clothing" style="height:30px;width:150px;">CLOTHING</button>
-			</span>
-		</div>
-		<div class="thirdDiv">
-			<div class="fourthDiv">
-				<button>&#9776;</button>
-				<button style="margin-left:15px;">pin</button>
-				<label style="height:40px;width:100px;border:2px solid #000;" id="box1">Mobile</label></br>
-				<!-- <label></br>Samsung</label></br>
-				<label>Nokia</label></br>
-				<label>Apple</label><br></label></br> -->
-				<label style="height:40px;width:100px;border:2px solid #000;" id="box2" margin-top:-50px;>Telivision
-				</label></br>
-				<label style="height:40px;width:100px;border:2px solid #000;" id="box3">Laptops</label></br>
-			</div>
-		</div>
-		<span class="fourthSpan"></span> 
-	</div>
+    <div class="firstDiv" id="fd">
+    <div id="para"><p align="center">this is samsung mobile page</p></div>
+        <div class="secondDiv">
+            <span class="firstSpan">
+                <li><a href="#Electronics" id="1">Electronics</a></li>
+            </span>
+            <span class="secondSpan">
+                <li><a href="#AutoMobiles">AutoMobiles</a></li>
+            </span>
+            <span class="thirdSpan">
+                <li><a href="#Clothing">Clothing</a></li>
+            </span>
+        </div>
+        <div class="thirdDiv">
+            <button id="hamburger">&#9776;</button>
+        </div>
+            <div class="fourthDiv" id="electronic">
+                <ul id="elec">
+                    <li><a href="#Mobile" id="mob">Mobile</a>
+                        <ul>
+                            <li><a href="#Samsung" id="sam">Samsung</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Apple" id="apple">Apple</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Nokia" id="nokia">Nokia</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Telivision" id="tv">Telivision</a>
+                        <ul>
+                            <li><a href="#Sony">Sony</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Panasonic">Panasonic</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Videocon">Videocon</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Laptop" id="lap">Laptop</a>
+                        <ul>
+                            <li><a href="#HP">HP</a>
+
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Dell">Dell</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Acer">Acer</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="fifthDiv" id="autoMobiles">
+                <ul>
+                    <li><a href="#Cars">Cars</a>
+                        <ul>
+                            <li><a href="#Mercedes">Mercedes</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Maruti">Maruti</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Ford">Ford</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Bikes">Bikes</a>
+                        <ul>
+                            <li><a href="#HarleyDavison">HarleyDavison</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Suzuki">Suzuki</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Ducati">Ducati</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Truck">Truck</a>
+                        <ul>
+                            <li><a href="#Tata">Tata</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Mahindra">Mahindra</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Escorts">Escorts</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="sixthDiv" id="clothing">
+                <ul>
+                    <li><a href="#Sarees">Sarees</a>
+                        <ul>
+                            <li><a href="#Banarsi">Banarsi</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Mysore">Mysore</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Chanderi">Chanderi</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Zeans">Zeans</a>
+                        <ul>
+                            <li><a href="#Levis">Levis</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Xpose">Xpose</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#AllenSolly">AllenSolly</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#T-Shirts">T-Shirts</a>
+                        <ul>
+                            <li><a href="#UCB">UCB</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#Veromoda">Veromoda</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#AND">AND</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+          
+    </div>
 </body>
 </html>
 
