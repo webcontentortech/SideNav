@@ -29,6 +29,7 @@ $(document).ready(function(){
         $("#img").show();
         if (elec) {
             elec = false;
+            console.log("hello");
             $("#electronic").show();
             $("#autoMobiles").hide();
             $("#clothing").hide();
