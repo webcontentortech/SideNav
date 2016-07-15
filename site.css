@@ -1,53 +1,71 @@
-.firstDiv{
+.background{
     width:1250px;
     height:650px;
     border:7px solid #000;
+    background-color: pink;
 }
 
-.secondDiv{
+.heading{
     width:1250px;
     height:30px;
     border:2px solid #000;
 }
 
-.thirdDiv{
-    width:1200px;
+.buttonDiv{
+    width:1250px;
     height:20px;
     border:2px solid #000;
 }
 
-.fourthDiv{
-    width:150px;
+.electronic{
+    width:200px;
     height:600px;
     font: left;
     border:2px solid #000;
     display:inline-block;
+    background-color: yellow;
 }
 
-.fifthDiv{
+.autoMobiles{
     width:200px;
     height:600px;
     border:2px solid #000;
     display:inline-block;
+    background-color: yellow;
 }
 
-.sixthDiv{
-    width:150px;
+.clothing{
+    width:200px;
     height:600px;
     border:2px solid #000;
     display:inline-block;
+    background-color: yellow;
 }
 
-.firstSpan{
+.paraDiv{
+    margin-top: 200px;
+    margin-right: 250px;
+    width: 550px;
+    float: right;
+}
+
+.eigthDiv{
+    background-color: grey;
+    width: 1250px;
+    height: 600px;
+    float: left;
+}
+
+.electronicSpan{
     margin-left:250px;
     display:inline-block;
 }
 
-.secondSpan{
+.automobileSpan{
     display:inline-block;
 }
 
-.thirdSpan{
+.clotheSpan{
     margin-right:250px;
     display:inline-block;
 }
@@ -59,4 +77,18 @@
 
 p{
     display: none;
+}
+
+.hamburger{
+    border-top: double;
+}
+
+.pin{
+    margin-right: 200px;
+    -webkit-transform: rotate(90deg);
+}
+
+.opacity{
+    opacity:0.2;
+    filter: alpha(opacity=50);
 }
