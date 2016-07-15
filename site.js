@@ -4,9 +4,6 @@ $(document).ready(function(){
     var hamelec = false;
     var hamauto = false;
     var hamclothe = false;
-    var elec = true;
-    var auto = true;
-    var clothe = true;
     var pin = false;
 
     $("#clothing").hide();
@@ -18,8 +15,11 @@ $(document).ready(function(){
         if (pin == false) {
             pin = true;
             $("#img").addClass("pin");
+            $("#clothing").addClass("opacity");
+            console.log("opacity done");
         }else{
             $("#img").removeClass("pin");
+             $("#clothing").removeClass("opacity");
             pin = false;
         }
     });
@@ -27,39 +27,25 @@ $(document).ready(function(){
     $("#1").click(function(){
         $("#hamburger").show();
         $("#img").show();
-        if (elec) {
-            elec = false;
-            console.log("hello");
-            $("#electronic").show();
-            $("#autoMobiles").hide();
-            $("#clothing").hide();
-        }else{
-            return;
-        }
+        $("#electronic").show();
+        $("#autoMobiles").hide();
+        $("#clothing").hide();
     });
 
     $("#2").click(function(){
         $("#hamburger").show();
-        if (auto) {
-           auto =  false;
-            $("#autoMobiles").show();
-            $("#electronic").hide();
-            $("#clothing").hide();
-        }else{
-            return;
-        }
+        $("#img").show();
+        $("#autoMobiles").show();
+        $("#electronic").hide();
+        $("#clothing").hide();
     });
 
     $("#3").click(function(){
         $("#hamburger").show();
-        if (clothe) {
-            clothe = false;
-            $("#clothing").show();
-            $("#electronic").hide();
-            $("#autoMobiles").hide();
-       }else{
-            return;
-       }
+        $("#img").show();
+        $("#clothing").show();
+        $("#electronic").hide();
+        $("#autoMobiles").hide();
     });
    
     $("#sam").click(function(){
@@ -69,29 +55,31 @@ $(document).ready(function(){
 
     $("#hamburger").click(function(){
         if (hamelec == false) {
-            $("#electronic").hide();
             hamelec = true;
-        }else if(hamelec) {
+            $("#electronic").hide();
+        }else{
+            hamelec = false;
             $("#electronic").show();
             $("#autoMobiles").hide();
             $("#clothing").hide();
-            hamelec = false;
-        }else if (hamauto == false) {
-            $("#autoMobiles").hide();
+        }
+        if (hamauto == false) {
             hamauto = true;
-        }else if(hamauto){
+            $("#autoMobiles").hide();
+        }else{
+            hamauto = false;
             $("#autoMobiles").show();
             $("#electronic").hide();
             $("#clothing").hide();
-            hamauto = false;
-        }else if (hamclothe == false) {
-            $("#clothing").hide();
+        }
+        if (hamclothe == false) {
             hamclothe = true;
+            $("#clothing").hide();
         }else{
+            hamclothe = false;
             $("#clothing").show();
             $("#electronic").hide();
             $("#autoMobiles").hide();
-            hamclothe = true;
         }
     });  
 });

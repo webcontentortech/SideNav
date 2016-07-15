@@ -46,7 +46,6 @@
     margin-top: 200px;
     margin-right: 250px;
     width: 550px;
-    background-color: green;
     float: right;
 }
 
@@ -87,4 +86,8 @@ p{
 .pin{
     margin-right: 200px;
     -webkit-transform: rotate(90deg);
+}
+
+.opacity{
+    opacity: 0.5;
 }
