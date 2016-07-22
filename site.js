@@ -5,47 +5,40 @@ $(document).ready(function(){
     $("#autoMobiles").hide();
     $("#clothing").hide();
     
-    var elec = false;
-    var auto = false;
-    var clothe = false;
+    var tab = "";
     var pin = false;
     var ham = true;
+    var angle = true;
 
     var hamburger = function(){
-        showLeftDiv();
-        //elec = true;
-        /*ham = !ham;
+        ham = !ham;
         if (ham) {
             showLeftDiv();
         }else{
             hideLeftDiv();
-        }*/
+        }
     }
 
     $("#hamburger").click(hamburger);
-
     $("#firstHeading").click(function(){
         $("#hamburger").show();
         $("#img").show();
-        elec = true;
+        tab = "electronic"
         showLeftDiv();
-        elec = false;
     });
 
     $("#secondHeading").click(function(){
         $("#hamburger").show();
         $("#img").show();
-        auto = true;
+        tab = "auto";
         showLeftDiv();
-        auto = false;
     });
 
     $("#thirdHeading").click(function(){
         $("#hamburger").show();
         $("#img").show();
-        clothe = true;
+        tab = "clothe";
         showLeftDiv();
-        clothe = false;
     });
 
     var hideLeftDiv = function(){
@@ -56,11 +49,11 @@ $(document).ready(function(){
     
     var showLeftDiv = function(){
         hideLeftDiv();
-        if (elec == true) {
+        if (tab == "electronic") {
             $("#electronic").show();
-        }else if (auto == true) {
+        }else if (tab == "auto") {
             $("#autoMobiles").show();
-        }else if (clothe == true) {
+        }else if (tab == "clothe") {
             $("#clothing").show();
         }
     }
@@ -70,11 +63,51 @@ $(document).ready(function(){
             pin = true;
             $("#img").addClass("pin");
             $("#electronic").addClass("opacity");
-            console.log("opacity done");
+            $("#autoMobiles").addClass("opacity");
+            $("#clothing").addClass("opacity");
+            hideLeftDiv();
+            $("#img").hide();
         }else{
             $("#img").removeClass("pin");
-             $("#electronic").removeClass("opacity");
+            $("#electronic").removeClass("opacity");
+            $("#autoMobiles").removeClass("opacity");
+            $("#clothing").removeClass("opacity");
             pin = false;
         }
     });
-});
+
+    $("#mob").click(function(){
+        if(angle){
+            angle = false;
+            $("#angle1").addClass("angle");
+            $("#mobItems").hide();
+        }else{
+            $("#angle1").removeClass("angle");
+            $("#mobItems").show();
+            angle = true;
+        }
+    });
+
+    $("#tv").click(function(){
+        if(angle){
+            angle = false;
+            $("#angle2").addClass("angle");
+            $("#tvItems").hide();
+        }else{
+            $("#angle2").removeClass("angle");
+            $("#tvItems").show();
+            angle = true;
+        }
+    });    
+}); 
+
+var getElement = function(element,elem){
+    var element = element.text();
+    var elem = elem.text();
+    $("#para").text("This is" +" " +element+" "+elem+" "+ "page");
+}
+
+var getId = function(){
+    var b = $(this).attr("id");
+    console.log(b);
+}

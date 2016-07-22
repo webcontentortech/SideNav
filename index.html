@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="site.css">
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="jQuery.js"></script>
         <script type="text/javascript" src="site.js"></script>
     </head>
 <body>
@@ -21,42 +21,45 @@
         <div class="buttonDiv" class="pin">
             <button id="hamburger">&#9776;</button>
             <img src="pin.png" height="10px" width="10px" id="img">
-            
         </div>
-        <div class="eigthDiv" id="eigthdiv">
+        <div class="leftdiv" id="leftdiv">
             <div class="electronic" id="electronic">
                 <ul id="elec">
-                    <li><a href="#Mobile" id="mob">Mobile</a>
-                        <ul>
-                            <li><a href="#Samsung" id="sam">Samsung</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Apple" id="apple">Apple</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Nokia" id="nokia">Nokia</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#Telivision" id="tv">Telivision</a>
-                        <ul>
-                            <li><a href="#Sony" id="sony">Sony</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Panasonic" id="pana">Panasonic</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Videocon" id="video">Videocon</a></li>
-                        </ul>
-                    </li>
+                    <div><img src="angle.png" height="15px" width="20px" id="angle1"><a href="#Mobile" id="mob" onclick="getId()">Mobile</a>
+                        <div id="mobItems" >
+                            <ul>
+                                <li><a href="#Samsung" id="sam" onclick = "getElement($(this),$(mob))">Samsung</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#Apple" id="apple" onclick = "getElement($(this),$(mob))">Apple</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#Nokia" id="nokia" onclick = "getElement($(this),$(mob))">Nokia</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div><img src="angle.png" height="15px" width="20px" id="angle2"><a href="#Telivision" id="tv">Telivision</a>
+                        <div id="tvItems">
+                            <ul>
+                                <li><a href="#Sony" id="sony" onclick = "getElement($(this),$(tv))">Sony</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#Panasonic" id="pana" onclick = "getElement($(this),$(tv))">Panasonic</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#Videocon" id="video" onclick = "getElement($(this),$(tv))">Videocon</a></li>
+                            </ul>
+                        </div>
+                    </div>
                     <li><a href="#Laptop" id="lap">Laptop</a>
                         <ul>
-                            <li><a href="#HP" id="hp">HP</a></li>
+                            <li><a href="#HP" id="hp" onclick = "getElement($(this),$(lap))">HP</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Dell" id="dell">Dell</a></li>
+                            <li><a href="#Dell" id="dell" onclick = "getElement($(this),$(lap))">Dell</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Acer" id="acer">Acer</a></li>
+                            <li><a href="#Acer" id="acer" onclick = "getElement($(this),$(lap))">Acer</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -65,35 +68,35 @@
                 <ul>
                     <li><a href="#Cars" id="cars">Cars</a>
                         <ul>
-                            <li><a href="#Mercedes" id="mercedes">Mercedes</a></li>
+                            <li><a href="#Mercedes" id="mercedes" onclick = "getElement($(this),$(cars))">Mercedes</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Maruti" id="maruti">Maruti</a></li>
+                            <li><a href="#Maruti" id="maruti" onclick = "getElement($(this),$(cars))">Maruti</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Ford" id="ford">Ford</a></li>
+                            <li><a href="#Ford" id="ford" onclick = "getElement($(this),$(cars))">Ford</a></li>
                         </ul>
                     </li>
                     <li><a href="#Bikes" id="bikes">Bikes</a>
                         <ul>
-                            <li><a href="#HarleyDavison" id="hd">HarleyDavison</a></li>
+                            <li><a href="#HarleyDavison" id="hd" onclick = "getElement($(this),$(bikes))">HarleyDavison</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Suzuki" id="suzuki">Suzuki</a></li>
+                            <li><a href="#Suzuki" id="suzuki" onclick = "getElement($(this),$(bikes))">Suzuki</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Ducati" id="ducati">Ducati</a></li>
+                            <li><a href="#Ducati" id="ducati" onclick = "getElement($(this),$(bikes))">Ducati</a></li>
                         </ul>
                     </li>
                     <li><a href="#Truck" id="truck">Truck</a>
                         <ul>
-                            <li><a href="#Tata" id="tata">Tata</a></li>
+                            <li><a href="#Tata" id="tata" onclick = "getElement($(this),$(truck))">Tata</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Mahindra" id="mahindra">Mahindra</a></li>
+                            <li><a href="#Mahindra" id="mahindra" onclick = "getElement($(this),$(truck))">Mahindra</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Escorts" id="escorts">Escorts</a></li>
+                            <li><a href="#Escorts" id="escorts" onclick = "getElement($(this),$(truck))">Escorts</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -102,35 +105,35 @@
                 <ul>
                     <li><a href="#Sarees" id="sari">Sarees</a>
                         <ul>
-                            <li><a href="#Banarsi" id="banarasi">Banarsi</a></li>
+                            <li><a href="#Banarsi" id="banarasi" onclick = "getElement($(this),$(sari))">Banarsi</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Mysore" id="mysore">Mysore</a></li>
+                            <li><a href="#Mysore" id="mysore" onclick = "getElement($(this),$(sari))">Mysore</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Chanderi" id="chanderi">Chanderi</a></li>
+                            <li><a href="#Chanderi" id="chanderi" onclick = "getElement($(this),$(sari))">Chanderi</a></li>
                         </ul>
                     </li>
                     <li><a href="#Zeans" id="zeans">Zeans</a>
                         <ul>
-                            <li><a href="#Levis" id="levis">Levis</a></li>
+                            <li><a href="#Levis" id="levis" onclick = "getElement($(this),$(zeans))">Levis</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Xpose" id="xpose">Xpose</a></li>
+                            <li><a href="#Xpose" id="xpose" onclick = "getElement($(this),$(zeans))">Xpose</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#AllenSolly" id="as">AllenSolly</a></li>
+                            <li><a href="#AllenSolly" id="as" onclick = "getElement($(this),$(zeans))">AllenSolly</a></li>
                         </ul>
                     </li>
                     <li><a href="#T-Shirts" id="tshirt">T-Shirts</a>
                         <ul>
-                            <li><a href="#UCB" id="ucb">UCB</a></li>
+                            <li><a href="#UCB" id="ucb" onclick = "getElement($(this),$(tshirt))">UCB</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#Veromoda" id="veromoda">Veromoda</a></li>
+                            <li><a href="#Veromoda" id="veromoda" onclick = "getElement($(this),$(tshirt))">Veromoda</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#AND" id="and">AND</a></li>
+                            <li><a href="#AND" id="and" onclick = "getElement($(this),$(tshirt))">AND</a></li>
                         </ul>
                     </li>
                 </ul>
