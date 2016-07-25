@@ -1,15 +1,22 @@
 $(document).ready(function(){
-    $("#hamburger").hide();
-    $("#img").hide();
-    $("#electronic").hide();
+    $("#hamburger").show();
+    $("#img").show();
+    $("#electronic").show();
     $("#autoMobiles").hide();
     $("#clothing").hide();
     
     var tab = "";
     var pin = false;
     var ham = true;
-    var angle = true;
-    var i = 1;
+    isMobileVer = true;
+    isTvVer = true;
+    isLapVer = true;
+    isCarVer = true;
+    isBikeVer = true;
+    isTruckVer = true;
+    isSariVer = true;
+    isZeansVer = true;
+    isTshirtVer = true;
 
     var hamburger = function(){
         ham = !ham;
@@ -23,21 +30,18 @@ $(document).ready(function(){
     $("#hamburger").click(hamburger);
 
     $("#firstHeading").click(function(){
-        $("#hamburger").show();
         $("#img").show();
         tab = "electronic"
         showLeftDiv();
     });
 
     $("#secondHeading").click(function(){
-        $("#hamburger").show();
         $("#img").show();
         tab = "auto";
         showLeftDiv();
     });
 
     $("#thirdHeading").click(function(){
-        $("#hamburger").show();
         $("#img").show();
         tab = "clothe";
         showLeftDiv();
@@ -78,112 +82,81 @@ $(document).ready(function(){
         }
     });
 
-    $("#mob").click(function(){
-       if(angle){
-            angle = false;
-            $("#angle1").addClass("angle");
-            $("#mobItems").hide();
+    var allTrue = function(){
+        isMobileVer = true;
+        isTvVer = true;
+        isLapVer = true;
+        isCarVer = true;
+        isBikeVer = true;
+        isTruckVer = true;
+        isSariVer = true;
+        isZeansVer = true;
+        isTshirtVer = true;
+        return;
+    }
+
+    var allFalse = function(){
+        isMobileVer = false;
+        isTvVer = false;
+        isLapVer = false;
+        isCarVer = false;
+        isBikeVer = false;
+        isTruckVer = false;
+        isSariVer = false;
+        isZeansVer = false;
+        isTshirtVer = false;
+        return;
+    }
+
+    var listHeadingClick = function(id, angle){
+        var itemId = "#" + id + "Items";
+        var imgId = "#" + id + "Angle";
+        if(angle){
+            allFalse();
+            $(imgId).addClass("angle");
+            $(itemId).hide();
         }else{
-            $("#angle1").removeClass("angle");
-            $("#mobItems").show();
-            angle = true;
+            allTrue();
+            $(imgId).removeClass("angle");
+            $(itemId).show();
         }
+        return;
+    };
+
+    $("#mob").click(function(){
+        listHeadingClick(this.id, isMobileVer);
     });
 
     $("#tv").click(function(){
-        if(angle){
-            angle = false;
-            $("#angle2").addClass("angle");
-            $("#tvItems").hide();
-        }else{
-            $("#angle2").removeClass("angle");
-            $("#tvItems").show();
-            angle = true;
-        }
+        listHeadingClick(this.id, isTvVer);
     });
 
     $("#lap").click(function(){
-        if(angle){
-            angle = false;
-            $("#angle3").addClass("angle");
-            $("#lapItems").hide();
-        }else{
-            $("#angle3").removeClass("angle");
-            $("#lapItems").show();
-            angle = true;
-        }
+        listHeadingClick(this.id, isLapVer);
     });
 
-    $("#cars").click(function(){
-        if(angle){
-            angle = false;
-            $("#angle4").addClass("angle");
-            $("#carItems").hide();
-        }else{
-            $("#angle4").removeClass("angle");
-            $("#carItems").show();
-            angle = true;
-        }
+    $("#car").click(function(){
+       listHeadingClick(this.id, isCarVer);
     });
 
     $("#bikes").click(function(){
-        if(angle){
-            angle = false;
-            $("#angle5").addClass("angle");
-            $("#bikeItems").hide();
-        }else{
-            $("#angle5").removeClass("angle");
-            $("#bikeItems").show();
-            angle = true;
-        }
+        listHeadingClick(this.id, isBikeVer);
     });
 
     $("#truck").click(function(){
-        if(angle){
-            angle = false;
-            $("#angle6").addClass("angle");
-            $("#truckItems").hide();
-        }else{
-            $("#angle6").removeClass("angle");
-            $("#truckItems").show();
-            angle = true;
-        }
+        listHeadingClick(this.id, isTruckVer);
     });
 
     $("#sari").click(function(){
-        if(angle){
-            angle = false;
-            $("#angle7").addClass("angle");
-            $("#sareesItems").hide();
-        }else{
-            $("#angle7").removeClass("angle");
-            $("#sareesItems").show();
-            angle = true;
-        }
+       listHeadingClick(this.id, isSariVer);
     });
 
     $("#zeans").click(function(){
-        if(angle){
-            angle = false;
-            $("#angle8").addClass("angle");
-            $("#zeansItems").hide();
-        }else{
-            $("#angle8").removeClass("angle");
-            $("#zeansItems").show();
-            angle = true;
-        }
+        listHeadingClick(this.id, isZeansVer);
     });
 
     $("#tshirt").click(function(){
-        if(angle){
-            angle = false;
-            $("#angle9").addClass("angle");
-            $("#tshirtItems").hide();
-        }else{
-            $("#angle9").removeClass("angle");
-            $("#tshirtItems").show();
-            angle = true;
-        }
+        listHeadingClick(this.id, isTshirtVer);
     });
 }); 
 
