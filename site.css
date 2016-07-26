@@ -12,8 +12,8 @@
 }
 
 .buttonDiv{
-    width:1250px;
-    height:20px;
+    width:198px;
+    height:28px;
     border:2px solid #000;
     background-color: rgb(255, 204, 255);
 }
@@ -44,13 +44,12 @@
 }
 
 .paraDiv{
-    margin-top: 200px;
-    margin-right: 250px;
-    width: 550px;
+    width: 1000px;
+    height: 600px;
     float: right;
 }
 
-.leftdiv{
+.downDiv{
     background-color:rgb(255, 230, 255);
     width: 1250px;
     height: 600px;
@@ -62,25 +61,25 @@
     display:inline-block;
 }
 
-.automobileSpan{
+.automobileSpan {
     display:inline-block;
 }
 
-.clotheSpan{
+.clotheSpan {
     margin-right:250px;
     display:inline-block;
 }
 
-.hamburger{
+.hamburger {
     border-top: double;
 }
 
-.pin{
-    margin-left: 100px;
+.pin {
+    left: 50px;
     -webkit-transform: rotate(90deg);
 }
 
-.opacity{
+.opacity {
     background-color:rgba(255, 204, 255, 0.1);
     filter: alpha(opacity=10);
 }
@@ -88,3 +87,19 @@
 .angle {
     -webkit-transform: rotate(95deg);
 }
+
+.hamSpan {
+    width:100px;
+    height:31px;
+    margin-left: -4px;
+    border:2px solid #000;
+    background-color: rgb(255, 204, 255);
+}
+
+.pinSpan {
+    width:96px;
+    height:31px;
+    margin-top: -35px;
+    margin-left: 100px;
+    border:2px solid #000;
+    background-color: rgb(255, 204, 255);
