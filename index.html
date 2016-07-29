@@ -2,141 +2,245 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="site.css">
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="jQuery.js"></script>
         <script type="text/javascript" src="site.js"></script>
     </head>
-<body>
-    <div class="background">
-        <div class="heading">
-            <span class="electronicSpan">
-                <li><a href="#Electronics" id="firstHeading">Electronics</a></li>
-            </span>
-            <span class="automobileSpan">
-                <li><a href="#AutoMobiles" id="secondHeading">AutoMobiles</a></li>
-            </span>
-            <span class="clotheSpan">
-                <li><a href="#Clothing" id="thirdHeading">Clothing</a></li>
-            </span>
+    <body>
+        <div class="background">
+            <div class="heading">
+                <span class="electronicSpan">
+                    <li><a href="#Electronics" id="firstHeading">Electronics</a></li>
+                </span>
+                <span class="automobileSpan">
+                    <li><a href="#AutoMobiles" id="secondHeading">AutoMobiles</a></li>
+                </span>
+                <span class="clotheSpan">
+                    <li><a href="#Clothing" id="thirdHeading">Clothing</a></li>
+                </span>
+            </div>
+            <div class="downDiv" id="downdiv">
+                <div class="electronic" id="electronic">
+                    <div class="buttonDiv">
+                        <span>
+                            <div class="hamSpan" >
+                                <button id="hamburger" style="margin-left:28px; margin-top:5px">
+                                &#9776;</button>
+                            </div>
+                        </span>
+                        <span>
+                            <div class="pinSpan">
+                                <img src="pin.png" height="15px" width="10px" id="img" style="margin-left:50px; margin-top:5px" class="pin">
+                            </div>
+                        </span>
+                    </div>
+                    <ul id="elec">
+                        <div>
+                            <img src="angle.png" height="15px" width="20px" id="mobAngle">
+                            <a href="#Mobile" id="mob">Mobile</a>
+                            <div id="mobItems">
+                                <ul>
+                                    <li><a href="#samsung" id="sam" 
+                                        onclick = "getElement($(this),$(mob))">Samsung</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#apple" id="apple" 
+                                        onclick = "getElement($(this),$(mob))">Apple</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#nokia" id="nokia" 
+                                        onclick = "getElement($(this),$(mob))">Nokia</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="angle.png" height="15px" width="20px" id="tvAngle">
+                            <a href="#telivision" id="tv">Telivision</a>
+                            <div id="tvItems">
+                                <ul>
+                                    <li><a href="#sony" id="sony" 
+                                        onclick = "getElement($(this),$(tv))">Sony</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#panasonic" id="pana" 
+                                        onclick = "getElement($(this),$(tv))">Panasonic</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#videocon" id="video" 
+                                        onclick = "getElement($(this),$(tv))">Videocon</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="angle.png" height="15px" width="20px" id="lapAngle">
+                            <a href="#laptop" id="lap">Laptop</a>
+                            <div id="lapItems">
+                                <ul>
+                                    <li><a href="#hp" id="hp" 
+                                        onclick = "getElement($(this),$(lap))">HP</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#dell" id="dell" 
+                                        onclick = "getElement($(this),$(lap))">Dell</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#acer" id="acer" 
+                                        onclick = "getElement($(this),$(lap))">Acer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div class="autoMobiles" id="autoMobiles">
+                    <div class="buttonDiv">
+                        <span>
+                            <div class="hamSpan" >
+                                <button id="hamburger" style="margin-left:28px; margin-top:5px">
+                                &#9776;</button>
+                            </div>
+                        </span>
+                        <span>
+                            <div class="pinSpan">
+                                <img src="pin.png" height="15px" width="10px" id="img" style="margin-left:50px; margin-top:5px" class="pin">
+                            </div>
+                        </span>
+                    </div>
+                    <ul>
+                        <div>
+                            <img src="angle.png" height="15px" width="20px" id="carAngle">
+                            <a href="#cars" id="car">Cars</a>
+                            <div id="carItems">
+                                <ul>
+                                    <li><a href="#mercedes" id="mercedes" 
+                                        onclick = "getElement($(this),$(car))">Mercedes</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#maruti" id="maruti" 
+                                        onclick = "getElement($(this),$(car))">Maruti</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#ford" id="ford" 
+                                        onclick = "getElement($(this),$(car))">Ford</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="angle.png" height="15px" width="20px" id="bikesAngle">
+                            <a href="#bikes" id="bikes">Bikes</a>
+                            <div id="bikesItems">
+                                <ul>
+                                    <li><a href="#harleyDavison" id="hd" 
+                                        onclick = "getElement($(this),$(bikes))">HarleyDavison
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#suzuki" id="suzuki" 
+                                        onclick = "getElement($(this),$(bikes))">Suzuki</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#ducati" id="ducati" 
+                                        onclick = "getElement($(this),$(bikes))">Ducati</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="angle.png" height="15px" width="20px" id="truckAngle">
+                            <a href="#truck" id="truck">Truck</a>
+                            <div id="truckItems">
+                                <ul>
+                                    <li><a href="#tata" id="tata" 
+                                        onclick = "getElement($(this),$(truck))">Tata</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#mahindra" id="mahindra" 
+                                        onclick = "getElement($(this),$(truck))">Mahindra</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#escorts" id="escorts" 
+                                        onclick = "getElement($(this),$(truck))">Escorts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div class="clothing" id="clothing">
+                    <div class="buttonDiv">
+                        <span>
+                            <div class="hamSpan" >
+                                <button id="hamburger" style="margin-left:28px; margin-top:5px">
+                                &#9776;</button>
+                            </div>
+                        </span>
+                        <span>
+                            <div class="pinSpan">
+                                <img src="pin.png" height="15px" width="10px" id="img" style="margin-left:50px; margin-top:5px" class="pin">
+                            </div>
+                        </span>
+                    </div>
+                    <ul>
+                        <div>
+                            <img src="angle.png" height="15px" width="20px" id="sariAngle">
+                            <a href="#sarees" id="sari">Sarees</a>
+                            <div id="sariItems">
+                                <ul>
+                                    <li><a href="#banarsi" id="banarasi" 
+                                        onclick = "getElement($(this),$(sari))">Banarsi</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#mysore" id="mysore" 
+                                        onclick = "getElement($(this),$(sari))">Mysore</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#chanderi" id="chanderi" 
+                                        onclick = "getElement($(this),$(sari))">Chanderi</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="angle.png" height="15px" width="20px" id="zeansAngle">
+                            <a href="#zeans" id="zeans">Zeans</a>
+                            <div id="zeansItems">
+                                <ul>
+                                    <li><a href="#levis" id="levis" 
+                                        onclick = "getElement($(this),$(zeans))">Levis</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#xpose" id="xpose" 
+                                        onclick = "getElement($(this),$(zeans))">Xpose</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#allenSolly" id="as" 
+                                        onclick = "getElement($(this),$(zeans))">AllenSolly</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="angle.png" height="15px" width="20px" id="tshirtAngle">
+                            <a href="#t-Shirts" id="tshirt">T-Shirts</a>
+                            <div id="tshirtItems">
+                                <ul>
+                                    <li><a href="#ucb" id="ucb" 
+                                        onclick = "getElement($(this),$(tshirt))">UCB</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#veromoda" id="veromoda" 
+                                        onclick = "getElement($(this),$(tshirt))">Veromoda</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#and" id="and" 
+                                        onclick = "getElement($(this),$(tshirt))">AND</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div style="margin-left:180px; min-width:15px; margin-top: -862px;" >
+                    <button id="hamburger" style="margin-left:28px;margin-top: 267px;">&#9776;
+                    </button>
+                </div>
+                <div class="paraDiv" id="para"><b></b></div>
+            </div>
         </div>
-        <div class="buttonDiv" class="pin">
-            <button id="hamburger">&#9776;</button>
-            <img src="pin.png" height="10px" width="10px" id="img">
-            
-        </div>
-        <div class="eigthDiv" id="eigthdiv">
-            <div class="electronic" id="electronic">
-                <ul id="elec">
-                    <li><a href="#Mobile" id="mob">Mobile</a>
-                        <ul>
-                            <li><a href="#Samsung" id="sam">Samsung</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Apple" id="apple">Apple</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Nokia" id="nokia">Nokia</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#Telivision" id="tv">Telivision</a>
-                        <ul>
-                            <li><a href="#Sony" id="sony">Sony</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Panasonic" id="pana">Panasonic</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Videocon" id="video">Videocon</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#Laptop" id="lap">Laptop</a>
-                        <ul>
-                            <li><a href="#HP" id="hp">HP</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Dell" id="dell">Dell</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Acer" id="acer">Acer</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="autoMobiles" id="autoMobiles">
-                <ul>
-                    <li><a href="#Cars" id="cars">Cars</a>
-                        <ul>
-                            <li><a href="#Mercedes" id="mercedes">Mercedes</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Maruti" id="maruti">Maruti</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Ford" id="ford">Ford</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#Bikes" id="bikes">Bikes</a>
-                        <ul>
-                            <li><a href="#HarleyDavison" id="hd">HarleyDavison</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Suzuki" id="suzuki">Suzuki</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Ducati" id="ducati">Ducati</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#Truck" id="truck">Truck</a>
-                        <ul>
-                            <li><a href="#Tata" id="tata">Tata</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Mahindra" id="mahindra">Mahindra</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Escorts" id="escorts">Escorts</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="clothing" id="clothing">
-                <ul>
-                    <li><a href="#Sarees" id="sari">Sarees</a>
-                        <ul>
-                            <li><a href="#Banarsi" id="banarasi">Banarsi</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Mysore" id="mysore">Mysore</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Chanderi" id="chanderi">Chanderi</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#Zeans" id="zeans">Zeans</a>
-                        <ul>
-                            <li><a href="#Levis" id="levis">Levis</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Xpose" id="xpose">Xpose</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#AllenSolly" id="as">AllenSolly</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#T-Shirts" id="tshirt">T-Shirts</a>
-                        <ul>
-                            <li><a href="#UCB" id="ucb">UCB</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#Veromoda" id="veromoda">Veromoda</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#AND" id="and">AND</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="paraDiv" id="para"><b></b></div>
-            </div>
-    </div>
-</body>
+    </body>
 </html>

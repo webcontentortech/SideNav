@@ -1,25 +1,33 @@
 $(document).ready(function(){
     $("#hamburger").hide();
     $("#img").hide();
-    $("#electronic").hide();
+    
+    $("#electronic").show();
     $("#autoMobiles").hide();
     $("#clothing").hide();
-    
-    var elec = false;
-    var auto = false;
-    var clothe = false;
-    var pin = false;
+
+    var tab = "";
+    var pin = true;
     var ham = true;
 
+    var headingData = {
+        "mob": {isOpen: true},
+        "tv": {isOpen: true},
+        "lap": {isOpen: true},
+        "car": {isOpen: true},
+        "bikes": {isOpen:true},
+        "truck": {isOpen: true},
+        "sari": {isOpen:true},
+        "zeans": {isOpen:true},
+        "tshirt": {isOpen:true}};
+
     var hamburger = function(){
-        showLeftDiv();
-        //elec = true;
-        /*ham = !ham;
+        ham = !ham;
         if (ham) {
             showLeftDiv();
         }else{
             hideLeftDiv();
-        }*/
+        }
     }
 
     $("#hamburger").click(hamburger);
@@ -27,25 +35,22 @@ $(document).ready(function(){
     $("#firstHeading").click(function(){
         $("#hamburger").show();
         $("#img").show();
-        elec = true;
+        tab = "electronic"
         showLeftDiv();
-        elec = false;
     });
 
     $("#secondHeading").click(function(){
         $("#hamburger").show();
         $("#img").show();
-        auto = true;
+        tab = "auto";
         showLeftDiv();
-        auto = false;
     });
 
     $("#thirdHeading").click(function(){
         $("#hamburger").show();
         $("#img").show();
-        clothe = true;
+        tab = "clothe";
         showLeftDiv();
-        clothe = false;
     });
 
     var hideLeftDiv = function(){
@@ -56,25 +61,94 @@ $(document).ready(function(){
     
     var showLeftDiv = function(){
         hideLeftDiv();
-        if (elec == true) {
+        if (tab == "electronic") {
             $("#electronic").show();
-        }else if (auto == true) {
+        }else if (tab == "auto") {
             $("#autoMobiles").show();
-        }else if (clothe == true) {
+        }else if (tab == "clothe") {
             $("#clothing").show();
         }
     }
 
-    $("#img").click(function(){
-        if (pin == false) {
-            pin = true;
+    var clickOnPin = function(){
+        if (pin) {
+            pin = false;
             $("#img").addClass("pin");
             $("#electronic").addClass("opacity");
-            console.log("opacity done");
+            $("#autoMobiles").addClass("opacity");
+            $("#clothing").addClass("opacity");
+            hideLeftDiv();
+            $("#img").hide();
+            ham = false;
         }else{
             $("#img").removeClass("pin");
-             $("#electronic").removeClass("opacity");
-            pin = false;
+            $("#electronic").removeClass("opacity");
+            $("#autoMobiles").removeClass("opacity");
+            $("#clothing").removeClass("opacity");
+            pin = true;
         }
+
+        return;
+    }
+
+    $("#img").click(clickOnPin);
+
+    var listHeadingClick = function(id, angle){
+        var itemId = "#" + id + "Items";
+        var imgId = "#" + id + "Angle";
+        if(angle){
+            headingData[id].isOpen = false;
+            $(imgId).addClass("angle");
+            $(itemId).hide();
+        }else{
+            headingData[id].isOpen = true;
+            $(imgId).removeClass("angle");
+            $(itemId).show();
+        }
+
+        return;
+    };
+
+    $("#mob").click(function(){
+        listHeadingClick(this.id, headingData.mob.isOpen);
     });
-});
+
+    $("#tv").click(function(){
+        listHeadingClick(this.id, headingData.tv.isOpen);
+    });
+
+    $("#lap").click(function(){
+        listHeadingClick(this.id, headingData.lap.isOpen);
+    });
+
+    $("#car").click(function(){
+       listHeadingClick(this.id, headingData.car.isOpen);
+    });
+
+    $("#bikes").click(function(){
+        listHeadingClick(this.id, headingData.bikes.isOpen);
+    });
+
+    $("#truck").click(function(){
+        listHeadingClick(this.id, headingData.truck.isOpen);
+    });
+
+    $("#sari").click(function(){
+       listHeadingClick(this.id, headingData.sari.isOpen);
+    });
+
+    $("#zeans").click(function(){
+        listHeadingClick(this.id, headingData.zeans.isOpen);
+    });
+
+    $("#tshirt").click(function(){
+        listHeadingClick(this.id, headingData.tshirt.isOpen);
+    });
+
+}); 
+
+var getElement = function(subHeading,listHeading){
+    var subHeading = subHeading.text();
+    var listHeading = listHeading.text();
+    $("#para").text("This is" +" " +subHeading+" "+listHeading+" "+ "page");
+}
