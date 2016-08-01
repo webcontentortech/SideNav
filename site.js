@@ -1,154 +1,152 @@
 $(document).ready(function(){
-    $("#hamburger").hide();
-    $("#img").hide();
+    $("#leftHamburger, #img").show();
+    $("#electronic").addClass("active");
     
-    $("#electronic").show();
-    $("#autoMobiles").hide();
-    $("#clothing").hide();
-
-    var tab = "";
-    var pin = true;
-    var ham = true;
-
-    var headingData = {
-        "mob": {isOpen: true},
-        "tv": {isOpen: true},
-        "lap": {isOpen: true},
-        "car": {isOpen: true},
-        "bikes": {isOpen:true},
-        "truck": {isOpen: true},
-        "sari": {isOpen:true},
-        "zeans": {isOpen:true},
-        "tshirt": {isOpen:true}};
-
-    var hamburger = function(){
-        ham = !ham;
-        if (ham) {
-            showLeftDiv();
-        }else{
-            hideLeftDiv();
-        }
+    var showAllList = function(category){
+        $("#leftPanel").show();
+        hideAllList();
+        var element = $("#" + category + "List");
+        element.show();
+        return;
     }
 
-    $("#hamburger").click(hamburger);
-
-    $("#firstHeading").click(function(){
-        $("#hamburger").show();
-        $("#img").show();
-        tab = "electronic"
-        showLeftDiv();
-    });
-
-    $("#secondHeading").click(function(){
-        $("#hamburger").show();
-        $("#img").show();
-        tab = "auto";
-        showLeftDiv();
-    });
-
-    $("#thirdHeading").click(function(){
-        $("#hamburger").show();
-        $("#img").show();
-        tab = "clothe";
-        showLeftDiv();
-    });
-
-    var hideLeftDiv = function(){
-        $("#electronic").hide();
-        $("#autoMobiles").hide();
-        $("#clothing").hide();
+     var hideAllList = function(){
+        $("#electronicList").hide();
+        $("#automobilesList").hide();
+        $("#clothingList").hide();
     }
+
+    var stateInfo = {
+        currentCategory: "electronic",
+        isPinState: true,
+        "electronic" : {
+            "mobile": {isOpen: true},
+            "tv": {isOpen: true},
+            "laptop": {isOpen: true},
+        },
+        "automobiles" : {
+            "car": {isOpen: true},
+            "bikes": {isOpen:true},
+            "truck": {isOpen: true},
+        },
+        "clothing": {
+            "sari": {isOpen:true},
+            "zeans": {isOpen:true},
+            "tshirt": {isOpen:true}
+        },
+    }
+
+    var rightHamburger = function(){
+        showAllList(stateInfo.currentCategory);
+        $("#leftPanel").addClass("opacityDone");
+        $("#rightHamburger").hide();
+    }
+
+    $("#electronic").click(function(){
+        $(this).addClass("active");
+        $("#automobiles, #clothing").removeClass("active");
+        stateInfo.currentCategory = "electronic";
+        showAllList(stateInfo.currentCategory);
+        return;
+    });
+
+    $("#automobiles").click(function(){
+        $(this).addClass("active");
+        $("#electronic, #clothing").removeClass("active");
+        stateInfo.currentCategory = "automobiles";
+        showAllList(stateInfo.currentCategory);
+        return;
+    });
+
+    $("#clothing").click(function(){
+        $(this).addClass("active");
+        $("#electronic, #automobiles").removeClass("active");
+        stateInfo.currentCategory = "clothing";
+        showAllList(stateInfo.currentCategory);
+    });
+
+    $("#leftHamburger").click(function(){
+        $("#rightHamburger").show();
+        $("#leftPanel").hide();
+        $("#rightPanel").addClass("increaseWidth");
+    });
+
+    $("#rightHamburger").click(rightHamburger);
     
-    var showLeftDiv = function(){
-        hideLeftDiv();
-        if (tab == "electronic") {
-            $("#electronic").show();
-        }else if (tab == "auto") {
-            $("#autoMobiles").show();
-        }else if (tab == "clothe") {
-            $("#clothing").show();
-        }
-    }
-
     var clickOnPin = function(){
-        if (pin) {
-            pin = false;
-            $("#img").addClass("pin");
-            $("#electronic").addClass("opacity");
-            $("#autoMobiles").addClass("opacity");
-            $("#clothing").addClass("opacity");
-            hideLeftDiv();
-            $("#img").hide();
-            ham = false;
+        if (stateInfo.isPinState) {
+            $("#pin").addClass("pin");
+            $("#leftPanel").hide();
+            $("#rightHamburger").show();
+            $("#rightPanel").addClass("increaseWidth");
+            $("#listPanel").addClass("opacity");
         }else{
-            $("#img").removeClass("pin");
-            $("#electronic").removeClass("opacity");
-            $("#autoMobiles").removeClass("opacity");
-            $("#clothing").removeClass("opacity");
-            pin = true;
+            $("#pin").removeClass("pin");
+            $("#listPanel").removeClass("opacity");
         }
+        stateInfo.isPinState = ! stateInfo.isPinState;
 
         return;
     }
 
-    $("#img").click(clickOnPin);
+    $("#pin").click(clickOnPin);
 
-    var listHeadingClick = function(id, angle){
+    var listHeadingClick = function(id, isOpen){
         var itemId = "#" + id + "Items";
         var imgId = "#" + id + "Angle";
-        if(angle){
-            headingData[id].isOpen = false;
+        if(isOpen){
             $(imgId).addClass("angle");
             $(itemId).hide();
         }else{
-            headingData[id].isOpen = true;
             $(imgId).removeClass("angle");
             $(itemId).show();
         }
+        stateInfo[stateInfo.currentCategory][id].isOpen = ! isOpen;
 
         return;
     };
 
-    $("#mob").click(function(){
-        listHeadingClick(this.id, headingData.mob.isOpen);
+    $("#mobile").click(function(){
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].mobile.isOpen);
     });
 
     $("#tv").click(function(){
-        listHeadingClick(this.id, headingData.tv.isOpen);
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].tv.isOpen);
     });
 
-    $("#lap").click(function(){
-        listHeadingClick(this.id, headingData.lap.isOpen);
+    $("#laptop").click(function(){
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].laptop.isOpen);
     });
 
     $("#car").click(function(){
-       listHeadingClick(this.id, headingData.car.isOpen);
+       listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].car.isOpen);
     });
 
     $("#bikes").click(function(){
-        listHeadingClick(this.id, headingData.bikes.isOpen);
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].bikes.isOpen);
     });
 
     $("#truck").click(function(){
-        listHeadingClick(this.id, headingData.truck.isOpen);
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].truck.isOpen);
     });
 
     $("#sari").click(function(){
-       listHeadingClick(this.id, headingData.sari.isOpen);
+       listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].sari.isOpen);
     });
 
     $("#zeans").click(function(){
-        listHeadingClick(this.id, headingData.zeans.isOpen);
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].zeans.isOpen);
     });
 
     $("#tshirt").click(function(){
-        listHeadingClick(this.id, headingData.tshirt.isOpen);
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].tshirt.isOpen);
     });
 
+    $("#automobilesList, #clothingList, #rightHamburger").hide();
+    
 }); 
-
-var getElement = function(subHeading,listHeading){
-    var subHeading = subHeading.text();
-    var listHeading = listHeading.text();
-    $("#para").text("This is" +" " +subHeading+" "+listHeading+" "+ "page");
-}
+    var getElement = function(subHeading,listHeading){
+        var subHeading = subHeading.text();
+        var listHeading = listHeading.text();
+        $("#rightPara").text("This is" +" " +subHeading+" "+listHeading+" "+ "page");
+    }
