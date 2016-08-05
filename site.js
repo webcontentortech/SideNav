@@ -1,154 +1,223 @@
+var stateInfo = {
+        currentCategory: "electronic",
+        isPinState: true,
+        isUnpinState: false,
+        isLeftHamburgerClickedInUnpinState: false,
+        isLeftHamburgerOnClick: false,
+        isLeftHamburgerClicked: false,
+        "electronic" : {
+            "mobile": {isOpen: true},
+            "tv": {isOpen: true},
+            "laptop": {isOpen: true},
+        },
+        "automobiles" : {
+            "car": {isOpen: true},
+            "bikes": {isOpen:true},
+            "truck": {isOpen: true},
+        },
+        "clothing": {
+            "sari": {isOpen:true},
+            "zeans": {isOpen:true},
+            "tshirt": {isOpen:true}
+        },
+    }
+
 $(document).ready(function(){
-    $("#hamburger").hide();
-    $("#img").hide();
+    $("#rightPara").text("This is Samsung Mobile page");
+    $("#leftHamburger, #img").show();
+    $("#electronic").addClass("active");
     
-    $("#electronic").show();
-    $("#autoMobiles").hide();
-    $("#clothing").hide();
-
-    var tab = "";
-    var pin = true;
-    var ham = true;
-
-    var headingData = {
-        "mob": {isOpen: true},
-        "tv": {isOpen: true},
-        "lap": {isOpen: true},
-        "car": {isOpen: true},
-        "bikes": {isOpen:true},
-        "truck": {isOpen: true},
-        "sari": {isOpen:true},
-        "zeans": {isOpen:true},
-        "tshirt": {isOpen:true}};
-
-    var hamburger = function(){
-        ham = !ham;
-        if (ham) {
-            showLeftDiv();
-        }else{
-            hideLeftDiv();
-        }
+    var showAllList = function(category){
+        $("#leftPanel").show();
+        hideAllList();
+        var element = $("#" + category + "List");
+        element.show();
+        return;
     }
 
-    $("#hamburger").click(hamburger);
-
-    $("#firstHeading").click(function(){
-        $("#hamburger").show();
-        $("#img").show();
-        tab = "electronic"
-        showLeftDiv();
-    });
-
-    $("#secondHeading").click(function(){
-        $("#hamburger").show();
-        $("#img").show();
-        tab = "auto";
-        showLeftDiv();
-    });
-
-    $("#thirdHeading").click(function(){
-        $("#hamburger").show();
-        $("#img").show();
-        tab = "clothe";
-        showLeftDiv();
-    });
-
-    var hideLeftDiv = function(){
-        $("#electronic").hide();
-        $("#autoMobiles").hide();
-        $("#clothing").hide();
+    var hideAllList = function(){
+        $("#electronicList").hide();
+        $("#automobilesList").hide();
+        $("#clothingList").hide();
     }
-    
-    var showLeftDiv = function(){
-        hideLeftDiv();
-        if (tab == "electronic") {
-            $("#electronic").show();
-        }else if (tab == "auto") {
-            $("#autoMobiles").show();
-        }else if (tab == "clothe") {
-            $("#clothing").show();
+
+    var change = function(){
+        $("#pin").addClass("pin");
+        stateInfo.isLeftHamburgerOnClick =! stateInfo.isLeftHamburgerOnClick;
+        stateInfo.isLeftHamburgerClicked = true;
+        $("#leftPanel").hide();
+        $("#rightHamburger").show();
+        $("#rightPanel").addClass("increaseWidth");
+        $("#listPanel").addClass("opacity");
+        $("#leftPanel").addClass("opacityDone");
+        if (stateInfo.isLeftHamburgerClickedInUnpinState == false) {
+            stateInfo.isLeftHamburgerClicked = true;
+            $("#leftPanel").hide();
         }
     }
 
     var clickOnPin = function(){
-        if (pin) {
-            pin = false;
-            $("#img").addClass("pin");
-            $("#electronic").addClass("opacity");
-            $("#autoMobiles").addClass("opacity");
-            $("#clothing").addClass("opacity");
-            hideLeftDiv();
-            $("#img").hide();
-            ham = false;
+        if (stateInfo.isPinState) {
+            change();
         }else{
-            $("#img").removeClass("pin");
-            $("#electronic").removeClass("opacity");
-            $("#autoMobiles").removeClass("opacity");
-            $("#clothing").removeClass("opacity");
-            pin = true;
-        }
+            $("#pin").removeClass("pin");
+            stateInfo.isLeftHamburgerClicked = false;
+            stateInfo.isLeftHamburgerOnClick =! stateInfo.isLeftHamburgerOnClick;
+            $("#rightPanel").removeClass("increaseWidth");
+            $("#rightPanel").addClass("decreaseWidth");
+            $("#listPanel").removeClass("opacity");
+            $("#leftPanel").removeClass("opacityDone");
 
+        }
+        stateInfo.isPinState = ! stateInfo.isPinState;
+        $("#rightPanel").removeClass("decreaseWidth");
+        stateInfo.isUnpinState =! stateInfo.isUnpinState;
+        console.log("unpin state in clickon function: ",stateInfo.isUnpinState);
         return;
     }
 
-    $("#img").click(clickOnPin);
+    var addAndRemoveClass = function(){
+        showAllList(stateInfo.currentCategory);
+        $("#rightPanel").removeClass("increaseWidth");
+        $("#rightPanel").addClass("decreaseWidth");
+        $("#rightHamburger").hide();
+        stateInfo.isLeftHamburgerClicked =! stateInfo.isLeftHamburgerClicked;
+        console.log("state of left hamburger:", stateInfo.isLeftHamburgerClicked);
+    }
 
-    var listHeadingClick = function(id, angle){
+    var rightHamburger = function(){
+        addAndRemoveClass();
+        if (stateInfo.isUnpinState) {
+            console.log("unpin state in right hamburger button in IF case:", stateInfo.isUnpinState);
+            $("#rightPanel").removeClass("decreaseWidth");
+            $("#rightPanel").addClass("increaseWidth");
+        }else if (!stateInfo.isUnpinState) {
+            console.log("unpin state in right hamburger button in ELSE case :", stateInfo.isUnpinState);
+            $("#rightPanel").removeClass("increaseWidth");
+            $("#rightPanel").addClass("decreaseWidth");
+        }
+    }
+
+    var leftHamburger = function(){
+        $("#rightPanel").removeClass("decreaseWidth");
+        $("#rightPanel").addClass("increaseWidth");
+        $("#rightHamburger").show();
+        $("#leftPanel").hide();
+        stateInfo.isLeftHamburgerClicked =! stateInfo.isLeftHamburgerClicked;
+        //stateInfo.isLeftHamburgerOnClick =! stateInfo.isLeftHamburgerOnClick;
+    }
+
+    $("#electronic").click(function(){
+        $("#rightPara").text("This is Samsung Mobile page");
+        stateInfo.currentCategory = "electronic";
+        showAllList(stateInfo.currentCategory);
+        $(this).addClass("active");
+        $("#automobiles, #clothing").removeClass("active");
+        if (stateInfo.isLeftHamburgerClicked) {
+            $("#leftPanel").hide();
+            $("#rightHamburger").show();
+        }else if (stateInfo.isLeftHamburgerClicked == false) {
+            stateInfo.currentCategory = "electronic";
+            showAllList(stateInfo.currentCategory);
+        }
+    });
+
+    $("#automobiles").click(function(){
+        $("#rightPara").text("This is Mercedes Cars page");
+        stateInfo.currentCategory = "automobiles";
+        showAllList(stateInfo.currentCategory);
+        $(this).addClass("active");
+        $("#electronic, #clothing").removeClass("active");
+        if (stateInfo.isLeftHamburgerClicked) {
+            $("#leftPanel").hide();
+            $("#rightHamburger").show();
+        }else if (stateInfo.isLeftHamburgerClicked == false) {
+            stateInfo.currentCategory = "automobiles";
+            showAllList(stateInfo.currentCategory);
+        }
+    });
+
+    $("#clothing").click(function(){
+        $("#rightPara").text("This is Banarsi Sarees page");
+        stateInfo.currentCategory = "clothing";
+        showAllList(stateInfo.currentCategory);
+        $(this).addClass("active");
+        $("#electronic, #automobiles").removeClass("active");
+        if (stateInfo.isLeftHamburgerClicked) {
+            $("#leftPanel").hide();
+            $("#rightHamburger").show();
+        }else if (stateInfo.isLeftHamburgerClicked == false) {
+            stateInfo.currentCategory = "clothing";
+            showAllList(stateInfo.currentCategory);
+        }
+    });
+
+    $("#leftHamburger").click(leftHamburger);
+
+    $("#rightHamburger").click(rightHamburger);
+    
+    $("#pin").click(clickOnPin);
+
+    var listHeadingClick = function(id, isOpen){
         var itemId = "#" + id + "Items";
         var imgId = "#" + id + "Angle";
-        if(angle){
-            headingData[id].isOpen = false;
+        if(isOpen){
             $(imgId).addClass("angle");
             $(itemId).hide();
         }else{
-            headingData[id].isOpen = true;
             $(imgId).removeClass("angle");
             $(itemId).show();
         }
+        stateInfo[stateInfo.currentCategory][id].isOpen = ! isOpen;
 
         return;
     };
 
-    $("#mob").click(function(){
-        listHeadingClick(this.id, headingData.mob.isOpen);
+    $("#mobile").click(function(){
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].mobile.isOpen);
     });
 
     $("#tv").click(function(){
-        listHeadingClick(this.id, headingData.tv.isOpen);
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].tv.isOpen);
     });
 
-    $("#lap").click(function(){
-        listHeadingClick(this.id, headingData.lap.isOpen);
+    $("#laptop").click(function(){
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].laptop.isOpen);
     });
 
     $("#car").click(function(){
-       listHeadingClick(this.id, headingData.car.isOpen);
+       listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].car.isOpen);
     });
 
     $("#bikes").click(function(){
-        listHeadingClick(this.id, headingData.bikes.isOpen);
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].bikes.isOpen);
     });
 
     $("#truck").click(function(){
-        listHeadingClick(this.id, headingData.truck.isOpen);
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].truck.isOpen);
     });
 
     $("#sari").click(function(){
-       listHeadingClick(this.id, headingData.sari.isOpen);
+       listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].sari.isOpen);
     });
 
     $("#zeans").click(function(){
-        listHeadingClick(this.id, headingData.zeans.isOpen);
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].zeans.isOpen);
     });
 
     $("#tshirt").click(function(){
-        listHeadingClick(this.id, headingData.tshirt.isOpen);
+        listHeadingClick(this.id, stateInfo[stateInfo.currentCategory].tshirt.isOpen);
     });
 
+    $("#automobilesList, #clothingList, #rightHamburger").hide();
 }); 
-
 var getElement = function(subHeading,listHeading){
     var subHeading = subHeading.text();
     var listHeading = listHeading.text();
-    $("#para").text("This is" +" " +subHeading+" "+listHeading+" "+ "page");
+    $("#rightPara").text("This is" +" " +subHeading+" "+listHeading+" "+ "page");
+    if (stateInfo.isLeftHamburgerOnClick == true) {
+        stateInfo.isLeftHamburgerClicked = true;
+        $("#leftPanel").hide();
+        $("#rightHamburger").show();
+    }
 }

@@ -7,239 +7,282 @@
     </head>
     <body>
         <div class="background">
-            <div class="heading">
-                <span class="electronicSpan">
-                    <li><a href="#Electronics" id="firstHeading">Electronics</a></li>
+            <div class="headingDiv">
+                <span>
+                    <li id="abc"><a href="#Electronics" id="electronic">Electronics</a></li>
                 </span>
-                <span class="automobileSpan">
-                    <li><a href="#AutoMobiles" id="secondHeading">AutoMobiles</a></li>
+                <span>
+                    <li><a href="#AutoMobiles" id="automobiles">AutoMobiles</a></li>
                 </span>
                 <span class="clotheSpan">
-                    <li><a href="#Clothing" id="thirdHeading">Clothing</a></li>
+                    <li><a href="#Clothing" id="clothing">Clothing</a></li>
                 </span>
             </div>
-            <div class="downDiv" id="downdiv">
-                <div class="electronic" id="electronic">
-                    <div class="buttonDiv">
-                        <span>
+            <div class="downDiv">
+                <span class="leftPanel" id="leftPanel">
+                    <div class="hamburgerPanel">
+                        <span style="width:50%">
                             <div class="hamSpan" >
-                                <button id="hamburger" style="margin-left:28px; margin-top:5px">
+                                <button id="leftHamburger" style="margin-left:35px; margin-top:10px">
                                 &#9776;</button>
                             </div>
                         </span>
-                        <span>
+                        <span style="width:50%">
                             <div class="pinSpan">
-                                <img src="pin.png" height="15px" width="10px" id="img" style="margin-left:50px; margin-top:5px" class="pin">
+                                <img src="pin.png" height="30px" width="30px" id="pin" style="margin-left:50px; margin-top:10px">
                             </div>
                         </span>
                     </div>
-                    <ul id="elec">
-                        <div>
-                            <img src="angle.png" height="15px" width="20px" id="mobAngle">
-                            <a href="#Mobile" id="mob">Mobile</a>
-                            <div id="mobItems">
-                                <ul>
-                                    <li><a href="#samsung" id="sam" 
-                                        onclick = "getElement($(this),$(mob))">Samsung</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#apple" id="apple" 
-                                        onclick = "getElement($(this),$(mob))">Apple</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#nokia" id="nokia" 
-                                        onclick = "getElement($(this),$(mob))">Nokia</a></li>
-                                </ul>
-                            </div>
+                    <div class="listPanel" id="listPanel">
+                        <div class="electronic" id="electronicList">
+                            <ul>
+                                <div>
+                                    <div>
+                                        <img src="angle.png" height="15px" width="20px" 
+                                        id="mobileAngle">
+                                        <a href="#Mobile" id="mobile">Mobile</a>
+                                    </div>
+                                    <div id="mobileItems">
+                                        <ul>
+                                            <li><a href="#samsung" id="sam" 
+                                                onclick = "getElement($(this),$(mobile))"
+                                                >Samsung</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#apple" id="apple"
+                                                onclick = "getElement($(this),$(mobile))">Apple
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#nokia" id="nokia" 
+                                                onclick = "getElement($(this),$(mobile))">Nokia
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="angle.png" height="15px" width="20px" id="tvAngle">
+                                        <a href="#telivision" id="tv">Telivision</a>
+                                    </div>
+                                    <div id="tvItems">
+                                        <ul>
+                                            <li><a href="#sony" id="sony" 
+                                                onclick = "getElement($(this),$(tv))">Sony</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#panasonic" id="pana" 
+                                                onclick = "getElement($(this),$(tv))">Panasonic
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#videocon" id="video" 
+                                                onclick = "getElement($(this),$(tv))">Videocon
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="angle.png" height="15px" width="20px" 
+                                        id="laptopAngle">
+                                        <a href="#laptop" id="laptop">Laptop</a>
+                                    </div>
+                                    <div id="laptopItems">
+                                        <ul>
+                                            <li><a href="#hp" id="hp" 
+                                                onclick = "getElement($(this),$(laptop))">HP</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#dell" id="dell" 
+                                                onclick = "getElement($(this),$(laptop))">Dell
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#acer" id="acer" 
+                                                onclick = "getElement($(this),$(laptop))">Acer
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </ul>
                         </div>
-                        <div>
-                            <img src="angle.png" height="15px" width="20px" id="tvAngle">
-                            <a href="#telivision" id="tv">Telivision</a>
-                            <div id="tvItems">
-                                <ul>
-                                    <li><a href="#sony" id="sony" 
-                                        onclick = "getElement($(this),$(tv))">Sony</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#panasonic" id="pana" 
-                                        onclick = "getElement($(this),$(tv))">Panasonic</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#videocon" id="video" 
-                                        onclick = "getElement($(this),$(tv))">Videocon</a></li>
-                                </ul>
-                            </div>
+                        <div class="autoMobiles" id="automobilesList">
+                            <ul>
+                                <div>
+                                    <div>
+                                        <img src="angle.png" height="15px" width="20px" 
+                                        id="carAngle"><a href="#cars" id="car">Cars</a>
+                                    </div>
+                                    <div id="carItems">
+                                        <ul>
+                                            <li><a href="#mercedes" id="mercedes" 
+                                                onclick = "getElement($(this),$(car))">Mercedes
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#maruti" id="maruti" 
+                                                onclick = "getElement($(this),$(car))">Maruti
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#ford" id="ford" 
+                                                onclick = "getElement($(this),$(car))">Ford</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="angle.png" height="15px" width="20px" 
+                                        id="bikesAngle"><a href="#bikes" id="bikes">Bikes</a>
+                                    </div>
+                                    <div id="bikesItems">
+                                        <ul>
+                                            <li><a href="#harleyDavison" id="hd" 
+                                                onclick = "getElement($(this),$(bikes))">HarleyDavison</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#suzuki" id="suzuki" 
+                                                onclick = "getElement($(this),$(bikes))">Suzuki
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#ducati" id="ducati" 
+                                                onclick = "getElement($(this),$(bikes))">Ducati
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="angle.png" height="15px" width="20px" 
+                                        id="truckAngle"><a href="#truck" id="truck">Truck</a>
+                                    </div>
+                                    <div id="truckItems">
+                                        <ul>
+                                            <li><a href="#tata" id="tata" 
+                                                onclick = "getElement($(this),$(truck))">Tata</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#mahindra" id="mahindra" 
+                                                onclick = "getElement($(this),$(truck))">Mahindra</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#escorts" id="escorts" 
+                                                onclick = "getElement($(this),$(truck))">Escorts</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </ul>
                         </div>
-                        <div>
-                            <img src="angle.png" height="15px" width="20px" id="lapAngle">
-                            <a href="#laptop" id="lap">Laptop</a>
-                            <div id="lapItems">
-                                <ul>
-                                    <li><a href="#hp" id="hp" 
-                                        onclick = "getElement($(this),$(lap))">HP</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#dell" id="dell" 
-                                        onclick = "getElement($(this),$(lap))">Dell</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#acer" id="acer" 
-                                        onclick = "getElement($(this),$(lap))">Acer</a></li>
-                                </ul>
-                            </div>
+                        <div class="clothing" id="clothingList">
+                            <ul>
+                                <div>
+                                    <div>
+                                        <img src="angle.png" height="15px" width="20px" 
+                                        id="sariAngle"><a href="#sarees" id="sari">Sarees</a>
+                                    </div>
+                                    <div id="sariItems">
+                                        <ul>
+                                            <li><a href="#banarsi" id="banarasi" 
+                                                onclick = "getElement($(this),$(sari))">Banarsi
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#mysore" id="mysore" 
+                                                onclick = "getElement($(this),$(sari))">Mysore
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#chanderi" id="chanderi" 
+                                                onclick = "getElement($(this),$(sari))">Chanderi</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="angle.png" height="15px" width="20px" 
+                                        id="zeansAngle"><a href="#zeans" id="zeans">Zeans</a>
+                                    </div>
+                                    <div id="zeansItems">
+                                        <ul>
+                                            <li><a href="#levis" id="levis" 
+                                                onclick = "getElement($(this),$(zeans))">Levis
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#xpose" id="xpose" 
+                                                onclick = "getElement($(this),$(zeans))">Xpose
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#allenSolly" id="as" 
+                                                onclick = "getElement($(this),$(zeans))">AllenSolly</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <img src="angle.png" height="15px" width="20px" 
+                                        id="tshirtAngle">
+                                        <a href="#t-Shirts" id="tshirt">T-Shirts</a>
+                                    </div>
+                                    <div id="tshirtItems">
+                                        <ul>
+                                            <li><a href="#ucb" id="ucb" 
+                                                onclick = "getElement($(this),$(tshirt))">UCB
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#veromoda" id="veromoda" 
+                                                onclick = "getElement($(this),$(tshirt))">Veromoda</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="#and" id="and" 
+                                                onclick = "getElement($(this),$(tshirt))">AND
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </ul>
                         </div>
-                    </ul>
-                </div>
-                <div class="autoMobiles" id="autoMobiles">
-                    <div class="buttonDiv">
-                        <span>
-                            <div class="hamSpan" >
-                                <button id="hamburger" style="margin-left:28px; margin-top:5px">
+                    </div>
+                </span>
+                <span class="rightSpan" id="rightPanel">
+                    <div class="hamAndPinPanel">
+                        <button id="rightHamburger" style="margin-left:28px; margin-top:10px">
                                 &#9776;</button>
-                            </div>
-                        </span>
-                        <span>
-                            <div class="pinSpan">
-                                <img src="pin.png" height="15px" width="10px" id="img" style="margin-left:50px; margin-top:5px" class="pin">
-                            </div>
-                        </span>
                     </div>
-                    <ul>
-                        <div>
-                            <img src="angle.png" height="15px" width="20px" id="carAngle">
-                            <a href="#cars" id="car">Cars</a>
-                            <div id="carItems">
-                                <ul>
-                                    <li><a href="#mercedes" id="mercedes" 
-                                        onclick = "getElement($(this),$(car))">Mercedes</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#maruti" id="maruti" 
-                                        onclick = "getElement($(this),$(car))">Maruti</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#ford" id="ford" 
-                                        onclick = "getElement($(this),$(car))">Ford</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="angle.png" height="15px" width="20px" id="bikesAngle">
-                            <a href="#bikes" id="bikes">Bikes</a>
-                            <div id="bikesItems">
-                                <ul>
-                                    <li><a href="#harleyDavison" id="hd" 
-                                        onclick = "getElement($(this),$(bikes))">HarleyDavison
-                                        </a>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#suzuki" id="suzuki" 
-                                        onclick = "getElement($(this),$(bikes))">Suzuki</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#ducati" id="ducati" 
-                                        onclick = "getElement($(this),$(bikes))">Ducati</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="angle.png" height="15px" width="20px" id="truckAngle">
-                            <a href="#truck" id="truck">Truck</a>
-                            <div id="truckItems">
-                                <ul>
-                                    <li><a href="#tata" id="tata" 
-                                        onclick = "getElement($(this),$(truck))">Tata</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#mahindra" id="mahindra" 
-                                        onclick = "getElement($(this),$(truck))">Mahindra</a>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#escorts" id="escorts" 
-                                        onclick = "getElement($(this),$(truck))">Escorts</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </ul>
-                </div>
-                <div class="clothing" id="clothing">
-                    <div class="buttonDiv">
-                        <span>
-                            <div class="hamSpan" >
-                                <button id="hamburger" style="margin-left:28px; margin-top:5px">
-                                &#9776;</button>
-                            </div>
-                        </span>
-                        <span>
-                            <div class="pinSpan">
-                                <img src="pin.png" height="15px" width="10px" id="img" style="margin-left:50px; margin-top:5px" class="pin">
-                            </div>
-                        </span>
+                    <div id="rightPara">
                     </div>
-                    <ul>
-                        <div>
-                            <img src="angle.png" height="15px" width="20px" id="sariAngle">
-                            <a href="#sarees" id="sari">Sarees</a>
-                            <div id="sariItems">
-                                <ul>
-                                    <li><a href="#banarsi" id="banarasi" 
-                                        onclick = "getElement($(this),$(sari))">Banarsi</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#mysore" id="mysore" 
-                                        onclick = "getElement($(this),$(sari))">Mysore</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#chanderi" id="chanderi" 
-                                        onclick = "getElement($(this),$(sari))">Chanderi</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="angle.png" height="15px" width="20px" id="zeansAngle">
-                            <a href="#zeans" id="zeans">Zeans</a>
-                            <div id="zeansItems">
-                                <ul>
-                                    <li><a href="#levis" id="levis" 
-                                        onclick = "getElement($(this),$(zeans))">Levis</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#xpose" id="xpose" 
-                                        onclick = "getElement($(this),$(zeans))">Xpose</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#allenSolly" id="as" 
-                                        onclick = "getElement($(this),$(zeans))">AllenSolly</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="angle.png" height="15px" width="20px" id="tshirtAngle">
-                            <a href="#t-Shirts" id="tshirt">T-Shirts</a>
-                            <div id="tshirtItems">
-                                <ul>
-                                    <li><a href="#ucb" id="ucb" 
-                                        onclick = "getElement($(this),$(tshirt))">UCB</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#veromoda" id="veromoda" 
-                                        onclick = "getElement($(this),$(tshirt))">Veromoda</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#and" id="and" 
-                                        onclick = "getElement($(this),$(tshirt))">AND</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </ul>
-                </div>
-                <div style="margin-left:180px; min-width:15px; margin-top: -862px;" >
-                    <button id="hamburger" style="margin-left:28px;margin-top: 267px;">&#9776;
-                    </button>
-                </div>
-                <div class="paraDiv" id="para"><b></b></div>
+                </span>
             </div>
         </div>
     </body>
